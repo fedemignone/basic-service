@@ -1,13 +1,14 @@
-package rest.service.mignone.user;
+package rest.service.mignone.user.service;
 
 import org.springframework.stereotype.Component;
+import rest.service.mignone.user.User;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
 @Component
-public class UserDaoService {
+public class UserServiceImpl implements UserService {
 
     private static List<User> users = new ArrayList<>();
     private static int usersCount = 4;
@@ -20,11 +21,13 @@ public class UserDaoService {
     }
 
     // public List<User> findAll()
+    @Override
     public List<User> findAll(){
         return users;
     }
 
     // public User save(User user)
+    @Override
     public User save(User user){
         if(user.getId() == null){
             user.setId(++usersCount);
@@ -34,6 +37,7 @@ public class UserDaoService {
     }
 
     // public User findOne(int id)
+    @Override
     public User findOne(int id){
         for(User user : users){
             if(user.getId() == id){
