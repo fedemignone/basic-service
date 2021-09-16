@@ -1,4 +1,4 @@
-package rest.service.mignone.controller;
+package rest.service.mignone.helloworld;
 
 public class HelloWorldBean {
 

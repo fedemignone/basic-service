@@ -1,6 +1,7 @@
-package rest.service.mignone.controller;
+package rest.service.mignone.helloworld.controller;
 
 import org.springframework.web.bind.annotation.*;
+import rest.service.mignone.helloworld.HelloWorldBean;
 
 @RestController
 public class HelloWorldController {
