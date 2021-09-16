@@ -10,9 +10,11 @@ public class ServiceApplication {
 	public static void main(String[] args) {
 
 		ApplicationContext applicationContext = SpringApplication.run(ServiceApplication.class, args);
-		for (String names: applicationContext.getBeanDefinitionNames()) {
-			System.out.println(names);
-		}
+
+		//
+		//for (String names: applicationContext.getBeanDefinitionNames()) {
+		//	System.out.println(names);
+		//}
 
 	}
 
