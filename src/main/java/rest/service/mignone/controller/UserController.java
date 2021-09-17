@@ -2,12 +2,14 @@ package rest.service.mignone.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import rest.service.mignone.exception.UserNotFoundException;
 import rest.service.mignone.user.User;
 import rest.service.mignone.user.service.UserServiceImpl;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.util.List;
 
@@ -35,7 +37,7 @@ public class UserController {
 
     //Create a User and return it
     @PostMapping(path = "/users")
-    public ResponseEntity<Object> createUser(@RequestBody  User user){
+    public ResponseEntity<Object> createUser(@Valid @RequestBody  User user){
         User savedUser = userService.save(user);
 
         // Devuelvo el user creado
