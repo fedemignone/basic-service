@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+import rest.service.mignone.exception.UserNotFoundException;
 import rest.service.mignone.user.service.UserServiceImpl;
 
 import java.net.URI;
@@ -24,7 +25,11 @@ public class UserResource {
     // retrieveUser(int id)
     @GetMapping(path = "/users/{id}")
     public User retrieveUserById(@PathVariable Integer id){
-        return userService.findOne(id);
+        User user = userService.findOne(id);
+        if (user == null){
+            throw new UserNotFoundException("Couldn't find the user with the id: " + id);
+        }
+        return user;
     }
 
     //Create a User and return it
