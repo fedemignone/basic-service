@@ -1,17 +1,18 @@
-package rest.service.mignone.user;
+package rest.service.mignone.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import rest.service.mignone.exception.UserNotFoundException;
+import rest.service.mignone.user.User;
 import rest.service.mignone.user.service.UserServiceImpl;
 
 import java.net.URI;
 import java.util.List;
 
 @RestController
-public class UserResource {
+public class UserController {
 
     @Autowired
     private UserServiceImpl userService;

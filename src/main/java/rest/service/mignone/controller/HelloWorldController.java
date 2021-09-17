@@ -1,4 +1,4 @@
-package rest.service.mignone.helloworld.controller;
+package rest.service.mignone.controller;
 
 import org.springframework.web.bind.annotation.*;
 import rest.service.mignone.helloworld.HelloWorldBean;
