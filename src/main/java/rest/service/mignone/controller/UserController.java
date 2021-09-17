@@ -31,6 +31,8 @@ public class UserController {
         User user = userService.findOne(id);
         if (user == null){
             throw new UserNotFoundException("Couldn't find the user with the id: " + id);
+
+
         }
         return user;
     }
