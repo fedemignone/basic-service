@@ -19,6 +19,7 @@ public class User {
         this.name = name;
 
         //@Past
+        // @ApiModelProperty(notes = "Birth date should be in the past")
         this.birthDate = birthDate;
     }
 
