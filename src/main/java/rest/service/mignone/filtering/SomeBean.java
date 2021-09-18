@@ -1,15 +1,12 @@
 package rest.service.mignone.filtering;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import net.minidev.json.annotate.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonFilter;
 
-@JsonIgnoreProperties(value = {"field2"})
+@JsonFilter("SomeBeanFilter")
 public class SomeBean {
 
     private String field1;
     private String field2;
-
-    @JsonIgnore
     private String field3;
 
     public SomeBean(String field1, String field2, String field3) {
